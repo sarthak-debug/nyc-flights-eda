@@ -1,0 +1,4 @@
+"origin","flights","cancel_pct","mean_dep_delay","mean_arr_delay","on_time_pct"
+"EWR",120835,2.68,15.1,9.1,73.7
+"JFK",111279,1.67,12.1,5.6,76.3
+"LGA",104662,3.01,10.3,5.8,76.9

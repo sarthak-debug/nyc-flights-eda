@@ -1,0 +1,173 @@
+=== Summary statistics: completed flights ===
+               n   mean    sd  min  q1 median   q3  p95  max
+dep_delay 327346   12.6  40.1  -43  -5     -2   11   88 1301
+arr_delay 327346    6.9  44.6  -86 -17     -5   14   91 1272
+gain      327346    5.7  18.0 -196  -3      7   17   31  109
+air_time  327346  150.7  93.7   20  82    129  192  339  695
+distance  327346 1048.4 735.9   80 509    888 1389 2475 4983
+
+Skewness of arr_delay: 3.72 
+Skewness of dep_delay: 4.82 
+
+=== Headline KPIs (2013) ===
+                      [,1]
+total_flights    336776.00
+cancelled_pct         2.45
+on_time_pct          75.50
+early_pct            59.40
+over_60_pct           8.70
+mean_arr_delay        6.90
+median_arr_delay     -5.00
+
+=== Distribution across delay bands ===
+
+Early/On schedule          1-14 min         15-59 min         1-3 hours          3+ hours 
+             59.4              16.9              15.2               7.3               1.2 
+
+=== Performance by carrier ===
+   carrier                     airline flights cancel_pct mean_arr_delay median_arr_delay on_time_pct
+1       F9      Frontier Airlines Inc.     685       0.44           21.9                6        61.2
+2       FL AirTran Airways Corporation    3260       2.24           20.1                5        65.4
+3       EV    ExpressJet Airlines Inc.   54173       5.20           15.8               -1        67.9
+4       YV          Mesa Airlines Inc.     601       9.32           15.6               -2        67.1
+5       OO       SkyWest Airlines Inc.      32       9.38           11.9               -7        75.9
+6       MQ                   Envoy Air   26397       4.67           10.8               -1        72.1
+7       WN      Southwest Airlines Co.   12275       1.56            9.6               -3        74.3
+8       B6             JetBlue Airways   54635       0.85            9.5               -3        73.0
+9       9E           Endeavor Air Inc.   18460       5.66            7.4               -7        74.4
+10      UA       United Air Lines Inc.   58665       1.17            3.6               -6        77.5
+11      US             US Airways Inc.   20536       3.23            2.1               -6        81.2
+12      VX              Virgin America    5162       0.60            1.8               -9        81.3
+13      DL        Delta Air Lines Inc.   48110       0.73            1.6               -8        81.0
+14      AA      American Airlines Inc.   32729       1.94            0.4               -9        80.6
+15      HA      Hawaiian Airlines Inc.     342       0.00           -6.9              -13        87.1
+16      AS        Alaska Airlines Inc.     714       0.28           -9.9              -17        85.3
+
+=== Performance by origin airport ===
+  origin flights cancel_pct mean_dep_delay mean_arr_delay on_time_pct
+1    EWR  120835       2.68           15.1            9.1        73.7
+2    JFK  111279       1.67           12.1            5.6        76.3
+3    LGA  104662       3.01           10.3            5.8        76.9
+
+=== Performance by month ===
+   month month_lbl flights cancel_pct mean_dep_delay mean_arr_delay on_time_pct
+1      1       Jan   27004       1.93           10.0            6.1        76.5
+2      2       Feb   24951       5.05           10.8            5.6        76.2
+3      3       Mar   28834       2.99           13.2            5.8        76.4
+4      4       Apr   28330       2.36           13.9           11.2        71.2
+5      5       May   28796       1.96           13.0            3.5        77.3
+6      6       Jun   28243       3.57           20.8           16.5        68.5
+7      7       Jul   29425       3.19           21.7           16.7        67.8
+8      8       Aug   29327       1.66           12.6            6.0        75.4
+9      9       Sep   27574       1.64            6.7           -4.0        86.3
+10    10       Oct   28889       0.82            6.2           -0.2        82.4
+11    11       Nov   27268       0.85            5.4            0.5        81.9
+12    12       Dec   28135       3.64           16.6           14.9        66.5
+
+=== Performance by scheduled departure hour ===
+   hour flights mean_dep_delay on_time_pct
+1     5    1940            0.7        89.5
+2     6   25447            1.6        88.1
+3     7   22475            1.9        88.0
+4     8   26734            4.1        83.7
+5     9   19931            4.5        82.9
+6    10   16370            6.4        81.5
+7    11   15689            7.1        81.5
+8    12   17744            8.5        79.3
+9    13   19457           11.3        76.3
+10   14   21022           13.7        73.5
+11   15   23082           16.8        69.7
+12   16   22045           18.6        69.7
+13   17   23667           21.0        66.5
+14   18   21072           21.0        66.5
+15   19   20507           24.7        65.1
+16   20   16061           24.2        64.6
+17   21   10503           24.2        62.6
+18   22    2558           18.7        66.1
+19   23    1042           14.0        69.9
+
+=== Performance by weekday ===
+    weekday flights mean_arr_delay on_time_pct
+1    Monday   49301            9.7        73.9
+2   Tuesday   49137            5.4        76.3
+3 Wednesday   48632            7.1        75.6
+4  Thursday   48445           11.7        71.5
+5    Friday   48531            9.1        73.2
+6  Saturday   37794           -1.4        82.5
+7    Sunday   45506            4.8        77.5
+
+Correlation dep_delay vs arr_delay: 0.915 
+Linear fit arr_delay = a + b*dep_delay  ->  a = -5.9 , b = 1.019 , R-squared = 0.837 
+
+=== Correlation of delays with weather (pairwise complete) ===
+           dep_delay arr_delay
+dep_delay      1.000     0.915
+arr_delay      0.915     1.000
+temp           0.061     0.033
+dewp           0.102     0.087
+humid          0.117     0.141
+wind_speed     0.047     0.064
+precip         0.090     0.111
+pressure      -0.114    -0.129
+visib         -0.093    -0.136
+
+=== Dry vs rainy departure hours ===
+           rain flights mean_dep_delay on_time_pct
+1      Dry hour  304877           11.3        77.2
+2 Rain recorded   20942           30.8        51.4
+
+=== Departure delay by visibility ===
+     visib_band flights mean_dep_delay
+1         <1 mi    4942           30.2
+2        1-3 mi   10359           22.9
+3        3-5 mi    6650           20.5
+4       5-10 mi   31066           19.2
+5 10 mi (clear)  272802           10.9
+
+=== Arrival delay by aircraft age (years) ===
+  age_band flights mean_arr_delay
+1      0-5   45889            4.9
+2     6-10   72056            9.4
+3    11-15  107120            7.9
+4    16-20   15110            3.2
+5      20+   33678            3.9
+
+=== Anomalous days (z > 3 on cancellations or delay) ===
+         date flights cancelled cancel_pct mean_dep_delay z_cancel z_delay
+1  2013-02-09     684       393       57.5           18.5     10.6     0.5
+2  2013-02-08     930       472       50.8           14.9      9.3     0.2
+3  2013-05-23     988       221       22.4           51.1      3.8     3.0
+4  2013-12-10     943       204       21.6           26.5      3.7     1.1
+5  2013-09-12     992       192       19.4           50.0      3.3     2.9
+6  2013-03-06     972       180       18.5           21.0      3.1     0.7
+7  2013-03-08     979       180       18.4           83.5      3.1     5.6
+8  2013-12-14     692       125       18.1           28.4      3.0     1.2
+9  2013-12-05     969       158       16.3           52.3      2.7     3.1
+10 2013-07-10    1004       121       12.1           52.9      1.9     3.2
+11 2013-09-02     929        83        8.9           53.0      1.2     3.2
+12 2013-07-01     966        85        8.8           56.2      1.2     3.4
+
+Lowest-volume days (holidays):
+        date flights
+1 2013-11-28     634
+2 2013-11-29     661
+3 2013-01-19     674
+4 2013-10-12     676
+5 2013-01-26     680
+
+IQR outlier fence for arr_delay: 60.5 minutes; 27789 flights ( 8.5 %) exceed it
+
+=== Five longest arrival delays ===
+        date carrier flight origin dest dep_delay arr_delay
+1 2013-01-09      HA     51    JFK  HNL      1301      1272
+2 2013-06-15      MQ   3535    JFK  CMH      1137      1127
+3 2013-01-10      MQ   3695    EWR  ORD      1126      1109
+4 2013-09-20      AA    177    JFK  SFO      1014      1007
+5 2013-07-22      MQ   3075    JFK  CVG      1005       989
+
+=== Flights with implied ground speed > 600 mph ===
+        date carrier flight origin dest distance air_time speed_mph
+1 2013-03-23      EV   3805    EWR  BNA      748       70       641
+2 2013-05-13      EV   4292    EWR  GSP      594       55       648
+3 2013-05-25      DL   1499    LGA  ATL      762       65       703
+4 2013-07-02      EV   4667    EWR  MSP     1008       93       650

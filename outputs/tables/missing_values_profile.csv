@@ -1,0 +1,16 @@
+"table","column","n_missing","pct_missing"
+"planes","speed",3299,99.31
+"weather","wind_gust",20778,79.56
+"weather","pressure",2729,10.45
+"flights","arr_delay",9430,2.8
+"flights","air_time",9430,2.8
+"flights","arr_time",8713,2.59
+"flights","dep_time",8255,2.45
+"flights","dep_delay",8255,2.45
+"planes","year",70,2.11
+"weather","wind_dir",460,1.76
+"flights","tailnum",2512,0.75
+"weather","wind_speed",4,0.02
+"weather","temp",1,0
+"weather","dewp",1,0
+"weather","humid",1,0

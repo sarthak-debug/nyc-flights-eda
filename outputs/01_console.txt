@@ -1,0 +1,91 @@
+=== Raw table dimensions ===
+flights    336776 rows x 19 columns
+airlines       16 rows x  2 columns
+weather     26115 rows x 15 columns
+planes       3322 rows x  9 columns
+
+=== Structure of flights ===
+'data.frame':	336776 obs. of  19 variables:
+ $ year          : int  2013 2013 2013 2013 2013 2013 2013 2013 2013 2013 ...
+ $ month         : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ day           : int  1 1 1 1 1 1 1 1 1 1 ...
+ $ dep_time      : int  517 533 542 544 554 554 555 557 557 558 ...
+ $ sched_dep_time: int  515 529 540 545 600 558 600 600 600 600 ...
+ $ dep_delay     : int  2 4 2 -1 -6 -4 -5 -3 -3 -2 ...
+ $ arr_time      : int  830 850 923 1004 812 740 913 709 838 753 ...
+ $ sched_arr_time: int  819 830 850 1022 837 728 854 723 846 745 ...
+ $ arr_delay     : int  11 20 33 -18 -25 12 19 -14 -8 8 ...
+ $ carrier       : chr  "UA" "UA" "AA" "B6" ...
+ $ flight        : int  1545 1714 1141 725 461 1696 507 5708 79 301 ...
+ $ tailnum       : chr  "N14228" "N24211" "N619AA" "N804JB" ...
+ $ origin        : chr  "EWR" "LGA" "JFK" "JFK" ...
+ $ dest          : chr  "IAH" "IAH" "MIA" "BQN" ...
+ $ air_time      : int  227 227 160 183 116 150 158 53 140 138 ...
+ $ distance      : int  1400 1416 1089 1576 762 719 1065 229 944 733 ...
+ $ hour          : int  5 5 5 5 6 5 6 6 6 6 ...
+ $ minute        : int  15 29 40 45 0 58 0 0 0 0 ...
+ $ time_hour     : chr  "2013-01-01T10:00:00Z" "2013-01-01T10:00:00Z" "2013-01-01T10:00:00Z" "2013-01-01T10:00:00Z" ...
+
+=== Columns with missing values ===
+   table     column n_missing pct_missing
+  planes      speed      3299       99.31
+ weather  wind_gust     20778       79.56
+ weather   pressure      2729       10.45
+ flights  arr_delay      9430        2.80
+ flights   air_time      9430        2.80
+ flights   arr_time      8713        2.59
+ flights   dep_time      8255        2.45
+ flights  dep_delay      8255        2.45
+  planes       year        70        2.11
+ weather   wind_dir       460        1.76
+ flights    tailnum      2512        0.75
+ weather wind_speed         4        0.02
+ weather       temp         1        0.00
+ weather       dewp         1        0.00
+ weather      humid         1        0.00
+
+Fully duplicated flight rows : 0 
+Duplicated weather keys (origin + time_hour): 0 
+
+=== Missing-value pattern in flights ===
+  dep_missing arr_missing arr_delay_missing flights
+1       FALSE       FALSE             FALSE  327346
+2       FALSE       FALSE              TRUE     717
+3       FALSE        TRUE              TRUE     458
+4        TRUE        TRUE              TRUE    8255
+
+=== Weather range check ===
+      temp          wind_speed         wind_gust         precip        
+ Min.   : 10.94   Min.   :   0.000   Min.   :16.11   Min.   :0.000000  
+ 1st Qu.: 39.92   1st Qu.:   6.905   1st Qu.:20.71   1st Qu.:0.000000  
+ Median : 55.40   Median :  10.357   Median :24.17   Median :0.000000  
+ Mean   : 55.26   Mean   :  10.518   Mean   :25.49   Mean   :0.004469  
+ 3rd Qu.: 69.98   3rd Qu.:  13.809   3rd Qu.:28.77   3rd Qu.:0.000000  
+ Max.   :100.04   Max.   :1048.361   Max.   :66.75   Max.   :1.210000  
+ NA's   :1        NA's   :4          NA's   :20778                     
+    pressure          visib       
+ Min.   : 983.8   Min.   : 0.000  
+ 1st Qu.:1012.9   1st Qu.:10.000  
+ Median :1017.6   Median :10.000  
+ Mean   :1017.9   Mean   : 9.255  
+ 3rd Qu.:1023.0   3rd Qu.:10.000  
+ Max.   :1042.1   Max.   :10.000  
+ NA's   :2729                     
+
+=== Flight status after flagging ===
+
+                 Cancelled                  Completed 
+                      8255                     327346 
+Diverted/No arrival record 
+                      1175 
+
+Weather match rate: 99.5 % of flights
+Plane match rate  : 82.8 % of flights
+
+Completed flights used for delay analysis: 327346 
+
+=== Plausibility checks ===
+Implied speed > 600 mph : 4 
+Arrival delay > 10 hours: 39 
+
+Saved outputs/flights_clean.rds with 336776 rows and 43 columns
