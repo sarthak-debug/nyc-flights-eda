@@ -1,0 +1,12 @@
+Saved 9 figures to outputs/figures 
+      visib_band                   rain mean_dep      n
+1         < 1 mi     Dry departure hour 27.98532   3542
+2         < 1 mi Rain in departure hour 35.93143   1400
+3         1-3 mi     Dry departure hour 17.47059   4607
+4         1-3 mi Rain in departure hour 27.18863   5752
+5         3-5 mi     Dry departure hour 12.00816   3308
+6         3-5 mi Rain in departure hour 28.85727   3342
+7        5-10 mi     Dry departure hour 15.73287  24857
+8        5-10 mi Rain in departure hour 33.09486   6209
+9  10 mi (clear)     Dry departure hour 10.55434 268563
+10 10 mi (clear) Rain in departure hour 32.06181   4239
